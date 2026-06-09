@@ -1,0 +1,11 @@
+services:
+
+  contacts-service:
+    build: ./contacts-service
+    ports:
+      - "3001:3001"
+
+  notification-service:
+    build: ./notifications-service
+    ports:
+      - "3002:3002"
