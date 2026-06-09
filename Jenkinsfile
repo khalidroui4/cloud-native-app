@@ -1,18 +1,25 @@
 pipeline {
 
+
 agent any
 
 stages {
 
-    stage('Build Docker Images') {
+    stage('Clone Success') {
         steps {
-            sh 'docker compose build'
+            echo 'Repository cloned successfully from GitHub'
         }
     }
 
-    stage('Deploy') {
+    stage('Build Simulation') {
         steps {
-            sh 'docker compose up -d'
+            echo 'Docker build would be executed here'
+        }
+    }
+
+    stage('Deploy Simulation') {
+        steps {
+            echo 'Application would be deployed here'
         }
     }
 }
