@@ -29,7 +29,7 @@ app.post('/contacts', async (req,res)=>{
     );
 
     await axios.post(
-        'http://localhost:3002/notifications',
+        'http://notification-service:3002/notifications',
         {
             message:
             `New contact created: ${req.body.name}`

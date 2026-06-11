@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: contacts-service
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: contacts-service
+
+  template:
+    metadata:
+      labels:
+        app: contacts-service
+
+    spec:
+      containers:
+      - name: contacts-service
+        image: cloud-native-app-contacts-service:latest
+        imagePullPolicy: IfNotPresent
+
+        ports:
+        - containerPort: 3001
